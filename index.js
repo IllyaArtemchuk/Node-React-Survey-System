@@ -8,9 +8,7 @@ require("./services/passport");
 
 console.log(process.env.MONGO_URI);
 
-mongoose.connect(keys.mongoURI, {
-  useNewUrlParser: true,
-});
+mongoose.connect(keys.mongoURI);
 const app = express();
 
 app.use(
