@@ -6,8 +6,9 @@ const keys = require("./config/keys");
 require("./models/User");
 require("./services/passport");
 
+console.log(process.env.MONGO_URI);
+
 mongoose.connect(keys.mongoURI, {
-  useMongoClient: true,
   useNewUrlParser: true,
 });
 const app = express();
