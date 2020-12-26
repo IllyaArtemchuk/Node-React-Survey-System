@@ -1,12 +1,18 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
+const assert = require("assert");
+
 const passport = require("passport");
 const keys = require("./config/keys");
 require("./models/User");
 require("./services/passport");
 
-mongoose.connect(keys.mongoURI);
+MongoClient.connect(uri, { useNewUrlParser: true }, (err, db) => {
+  assert.strictEqual(null, err);
+  // ...
+  db.close();
+});
 const app = express();
 
 app.use(
